@@ -72,8 +72,8 @@ from twsvmlib import metrics as M
 if __name__ == "__main__":
     data_list = ['flags']
     folds = 10
-    c_vals = [2**i for i in range(-3, 3)]
-    g_vals = [2**i for i in range(-3, 3)]  # Adjust parameter range as needed
+    c_vals = [2**i for i in range(-10, 10)]
+    g_vals = [2**i for i in range(-10, 10)]  # Adjust parameter range as needed
 
     for data in tqdm(data_list, desc="Processing"):
         X, y = Read.read(data)
@@ -128,6 +128,7 @@ if __name__ == "__main__":
             for i, p in enumerate(results["Best Params"]):
                 f.write(f"Fold {i+1}: c={p['c']:.2e}, gamma={p['gamma']:.2e}\n")
 ```
+
 
 
 
